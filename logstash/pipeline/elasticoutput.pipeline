@@ -1,0 +1,14 @@
+input { 
+	pipeline { 
+		address => elasticsearch_pipeline
+	}
+}
+
+output {
+	elasticsearch {
+		hosts => "elasticsearch:9200"
+		index => "%{index_group}-%{+YYYY.MM.dd}"
+		user => "elastic"
+		password => "changeme"
+	}
+}

@@ -1,0 +1,20 @@
+input { 
+	pipeline {
+		id => "readCoenradie"
+		address => coenradie_pipeline
+	}
+
+}
+filter {
+	mutate {
+		id => "addIndexGroupCoenradie"
+		add_field => {"index_group" => "coenradiegroup"}
+	}
+
+}
+output {
+	pipeline {
+		id => "fromCoenradieToElastic"
+		send_to => elasticsearch_pipeline
+	}
+}

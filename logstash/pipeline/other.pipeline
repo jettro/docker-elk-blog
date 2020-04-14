@@ -1,0 +1,18 @@
+input { 
+	pipeline {
+		id => "readOther"
+		address => other_pipeline
+	}
+}
+filter {
+	mutate {
+		id => "addIndexGroupOther"
+		add_field => { "index_group" => "othergroup" }
+	}
+}
+output {
+	pipeline {
+		id => "fromOtherToElastic"
+		send_to => elasticsearch_pipeline
+	}
+}

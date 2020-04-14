@@ -1,0 +1,36 @@
+input { 
+	http {
+		id => "receiveMessagesHttp"
+		port => 8003
+		codec => "json"
+	}
+
+	tcp {
+		id => "receiveMessagesTcp"
+		port => 5000
+		codec => "json"
+	}
+
+}
+filter {
+	mutate {
+		lowercase => [ "name" ]	
+	}
+	grok {
+		id => "splitName"
+		match => { "name" => "%{WORD:firstname} %{WORD:lastname}" }
+	}
+}
+output {
+  	if [lastname] == "coenradie" {
+		pipeline { 
+			id => "sendToCoenradie"
+			send_to => coenradie_pipeline
+		}
+	} else {
+		pipeline {
+			id => "sendToOther"
+			send_to => other_pipeline
+		}
+	}
+}
