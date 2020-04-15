@@ -87,4 +87,6 @@
   path.config: "/usr/share/logstash/pipeline/coenradie.pipeline"
 - pipeline.id: other_pipeline
   path.config: "/usr/share/logstash/pipeline/other.pipeline"
+- pipeline.id: deadletter_pipeline
+  path.config: "/usr/share/logstash/pipeline/deadletterqueue.pipeline"
 

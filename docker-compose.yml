@@ -11,7 +11,6 @@ services:
         source: ./elasticsearch/config/elasticsearch.yml
         target: /usr/share/elasticsearch/config/elasticsearch.yml
         read_only: true
-      # - ./elasticsearch/data:/usr/share/elasticsearch/data
       - type: bind
         source: ./elasticsearch/data
         target: /usr/share/elasticsearch/data
@@ -43,7 +42,6 @@ services:
         source: ./logstash/pipeline
         target: /usr/share/logstash/pipeline
         read_only: true
-      # - ./logstash/data:/var/lib/logstash/data
       - type: bind
         source: ./logstash/data
         target: /var/lib/logstash/data

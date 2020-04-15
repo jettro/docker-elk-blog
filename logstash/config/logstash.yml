@@ -171,7 +171,7 @@ path.queue: /var/lib/logstash/data/queue
 # ------------ Dead-Letter Queue Settings --------------
 # Flag to turn on dead-letter queue.
 #
-# dead_letter_queue.enable: false
+dead_letter_queue.enable: true
 
 # If using dead_letter_queue.enable: true, the maximum size of each dead letter queue. Entries
 # will be dropped if they would increase the size of the dead letter queue beyond this setting.
@@ -181,7 +181,7 @@ path.queue: /var/lib/logstash/data/queue
 # If using dead_letter_queue.enable: true, the directory path where the data files will be stored.
 # Default is path.data/dead_letter_queue
 #
-# path.dead_letter_queue:
+path.dead_letter_queue: /var/lib/logstash/data/dead_letter_queue
 #
 # ------------ Metrics Settings --------------
 #

@@ -1,0 +1,13 @@
+input {
+	dead_letter_queue {
+		path => "/var/lib/logstash/data/dead_letter_queue"
+		commit_offsets => false
+		pipeline_id => "elasticsearch_pipeline"
+	}
+}
+
+output {
+	stdout {
+		codec => rubydebug { metadata => true }
+	}
+}
