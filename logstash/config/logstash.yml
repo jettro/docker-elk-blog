@@ -222,7 +222,7 @@ path.dead_letter_queue: /var/lib/logstash/data/dead_letter_queue
 # https://www.elastic.co/guide/en/logstash/current/monitoring-logstash.html
 xpack.monitoring.enabled: true
 xpack.monitoring.elasticsearch.username: elastic
-xpack.monitoring.elasticsearch.password: changeme
+xpack.monitoring.elasticsearch.password: ${ELASTICSEARCH_PASSWORD:}
 xpack.monitoring.elasticsearch.hosts: ["http://elasticsearch:9200"]
 # an alternative to hosts + username/password settings is to use cloud_id/cloud_auth
 #xpack.monitoring.elasticsearch.cloud_id: monitoring_cluster_id:xxxxxxxxxx

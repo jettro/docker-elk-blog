@@ -6,3 +6,5 @@ Please refer to his repository with questions about installation, extendability,
 You can find the blog here:
 https://sharing.luminis.eu/blog/robust-logstash-configuration
 
+More examples:
+https://github.com/elastic/examples/blob/master/Miscellaneous/docker/full_stack_example/docker-compose-osx.yml
